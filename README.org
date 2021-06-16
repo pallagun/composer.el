@@ -2,6 +2,15 @@
 
 Note: I maintain a `works-for-me` branch with all the fixes I've made.
 
+I pull it in with this code snippet which I'm pretty sure is not the best, but it works:
+#+BEGIN_SRC emacs-lisp
+(quelpa
+ '(composer :fetcher github
+            :repo "pallagun/composer.el"
+            :branch "works-for-me"))
+(require 'composer)
+#+END_SRC
+
   
 #+BEGIN_HTML
 <a href="https://melpa.org/#/composer"><img alt="MELPA: composer" src="https://melpa.org/packages/composer-badge.svg"></a>

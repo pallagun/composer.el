@@ -213,12 +213,12 @@ Emacs or PHP linked with old OpenSSL."
   (mapconcat 'identity
              (seq-remove
               (lambda (line)
-                (string-equal
-                 (substring (downcase line) 0 (length "warning: "))
-                 "warning: "))
+                (and (>= (length line) (length "warning: "))
+                     (string-equal
+                      (substring (downcase line) 0 (length "warning: "))
+                      "warning: "))
               (split-string output "\n"))
              "\n"))
-
 
 (defun composer--command-execute (sub-command &rest args)
   "Execute `composer.phar' command SUB-COMMAND by ARGS."

@@ -216,7 +216,7 @@ Emacs or PHP linked with old OpenSSL."
                 (and (>= (length line) (length "warning: "))
                      (string-equal
                       (substring (downcase line) 0 (length "warning: "))
-                      "warning: "))
+                      "warning: ")))
               (split-string output "\n"))
              "\n"))
 
